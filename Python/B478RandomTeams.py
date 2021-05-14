@@ -17,10 +17,11 @@ f = n - m + 1
 zmax = ncr(f , 2)
 zmin = 0
 f = int(math.ceil(n / m))
+fm = int(math.floor(n/m))
 if( n%m == 0 ):
     zmin = ncr(f, 2) * (m)
 else:
-    zmin = ncr(f, 2)*(m-1) +  ncr((n-(f*(m-1))), 2)
+    zmin = ncr(f, 2)*(n%m) + (m-(n%m))*ncr(fm,2)
 
 
 print(zmin,zmax, sep=" ")
